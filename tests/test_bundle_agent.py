@@ -1,5 +1,6 @@
 import importlib.util
 from pathlib import Path
+import sys
 
 import pytest
 
@@ -24,6 +25,14 @@ def test_ldd_alias_and_host_loader():
 def test_missing_transitive_dependency_fails():
     with pytest.raises(RuntimeError, match="Unresolved dependency"):
         bundle.parse_ldd("libmissing.so => not found")
+
+
+def test_internal_remote_mode_does_not_require_ssh_host(tmp_path, monkeypatch):
+    called = []
+    monkeypatch.setattr(bundle, 'remote_bundle', lambda root: called.append(root))
+    monkeypatch.setattr(sys, 'argv', ['bundle_agent.py', '--remote', '--root', str(tmp_path)])
+    bundle.main()
+    assert called == [tmp_path]
 
 
 def test_inventory_includes_dynamic_dependencies_and_excludes_glibc(tmp_path, monkeypatch):

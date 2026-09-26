@@ -224,7 +224,7 @@ def remote_bundle(root):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--host", required=True, help="SSH destination for the Jetson build host")
+    parser.add_argument("--host", help="SSH destination for the Jetson build host")
     parser.add_argument("--root", type=Path, default=Path("/home/vlad/MILO"))
     parser.add_argument("--output", type=Path)
     parser.add_argument("--remote", action="store_true", help=argparse.SUPPRESS)
@@ -232,6 +232,8 @@ def main():
     if args.remote:
         remote_bundle(args.root)
         return
+    if not args.host:
+        parser.error("--host is required unless running the internal remote mode")
     if args.output is None:
         parser.error("--output is required; existing paths are never overwritten")
     script = Path(__file__).read_bytes()

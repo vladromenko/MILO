@@ -111,7 +111,35 @@ The validated installation uses:
 Exact interfaces, software versions, power boundaries, and cable ownership are
 listed in [Hardware](docs/HARDWARE.md).
 
-## Quick Start
+## Install From A Fresh Clone
+
+Start from the validated vendor base systems: Ubuntu 24.04 with the NVIDIA CUDA
+stack and ROS 2 Jazzy on Jetson, and Debian 13 with HailoRT 5.1.1 on Raspberry
+Pi. The repository installers then add system packages, Python dependencies,
+pinned native builds, verified models, the Pi agent bundle, tests, and service
+units. They do not start MILO or move the arm.
+
+On Jetson:
+
+```bash
+git clone https://github.com/vladromenko/MILO.git ~/MILO
+cd ~/MILO
+./install.sh jetson
+```
+
+On Raspberry Pi:
+
+```bash
+git clone https://github.com/vladromenko/MILO.git ~/MILO
+cd ~/MILO
+./install.sh pi
+```
+
+Machine-specific device names, shared secrets, SSH pairing, and the private
+robot network are configured once using [Installation](docs/INSTALLATION.md).
+No source, model, or generated service file must be copied manually.
+
+## Start And Stop
 
 The complete fresh-install procedure is in [Installation](docs/INSTALLATION.md).
 After both hosts have been commissioned, connect a phone to `MILO-NET`, open
@@ -168,6 +196,7 @@ guards, and the mobile API. Hardware acceptance is deliberately separate; see
 milo_next/       Runtime services and domain logic
 web/             Mobile operator interface
 scripts/         Installation, deployment, diagnostics, and benchmarks
+install.sh       Single entry point for Jetson and Raspberry Pi installation
 tests/           Hardware-free test suite
 arm_msgs/        ROS 2 arm message definitions
 firmware/        Archived STM32 controller source and verified V4 image
@@ -202,11 +231,6 @@ not authentication.
 
 Software limits are not a physical safety system. Keep the arm workspace clear,
 retain access to its power cutoff, and perform commissioning with an observer.
-
-## License
-
-MILO's original source is released under the Apache License 2.0. Bundled STM32,
-CMSIS, HAL, model, and upstream build components retain their respective licenses.
 
 ---
 

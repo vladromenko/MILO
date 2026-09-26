@@ -19,12 +19,14 @@ def check(condition, name, detail, results):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('role', choices=['brain', 'edge'])
+    parser.add_argument('--software-only', action='store_true')
     args = parser.parse_args()
     results = []
     runtime_path = ROOT / 'config/runtime.json'
     network_path = ROOT / 'config/network.json'
     check(runtime_path.is_file(), 'runtime_config', str(runtime_path), results)
-    check(network_path.is_file(), 'network_config', str(network_path), results)
+    if not args.software_only:
+        check(network_path.is_file(), 'network_config', str(network_path), results)
     if not runtime_path.is_file():
         print(json.dumps({'passed': False, 'checks': results}, indent=2))
         return 1
@@ -42,31 +44,32 @@ def main():
             ROOT / 'assets/models/whisper/ggml-base.bin',
             Path('/opt/ros/jazzy/setup.bash'),
             ROOT / 'ros_ws/install/setup.bash',
-            ROOT / 'config/edge_key',
-            ROOT / 'config/known_hosts',
         ]
+        if not args.software_only:
+            paths.extend((ROOT / 'config/edge_key', ROOT / 'config/known_hosts'))
         for path in paths:
             check(path.exists(), 'brain_path', str(path), results)
         check(shutil.which('ssh') is not None, 'ssh', 'required for Pi tunnels', results)
     else:
         paths = [
-            Path(cfg.get('camera', '')),
-            Path(cfg.get('serial', '')),
             Path(cfg.get('hailo_model', '')),
             ROOT / 'vendor/agent/check-libs',
             ROOT / 'assets/models/vision/face_detection_yunet.onnx',
             ROOT / 'assets/models/vision/face_recognition_sface.onnx',
             ROOT / 'assets/models/vision/facial_expression_mobilefacenet.onnx',
         ]
+        if not args.software_only:
+            paths[0:0] = (Path(cfg.get('camera', '')), Path(cfg.get('serial', '')))
         for path in paths:
             check(path.exists(), 'edge_path', str(path), results)
-        cards = Path('/proc/asound/cards').read_text() if Path('/proc/asound/cards').exists() else ''
-        check(cfg.get('input_hint', '').casefold() in cards.casefold(),
-              'microphone', cfg.get('input_hint'), results)
-        check(cfg.get('output_hint', '').casefold() in cards.casefold(),
-              'speaker', cfg.get('output_hint'), results)
-        check(Path('/dev/hailo0').exists() or Path('/dev/hailo1x').exists(),
-              'hailo_device', 'expected /dev/hailo0 or /dev/hailo1x', results)
+        if not args.software_only:
+            cards = Path('/proc/asound/cards').read_text() if Path('/proc/asound/cards').exists() else ''
+            check(cfg.get('input_hint', '').casefold() in cards.casefold(),
+                  'microphone', cfg.get('input_hint'), results)
+            check(cfg.get('output_hint', '').casefold() in cards.casefold(),
+                  'speaker', cfg.get('output_hint'), results)
+            check(Path('/dev/hailo0').exists() or Path('/dev/hailo1x').exists(),
+                  'hailo_device', 'expected /dev/hailo0 or /dev/hailo1x', results)
 
     passed = all(item['passed'] for item in results)
     print(json.dumps({'passed': passed, 'role': args.role, 'checks': results}, indent=2))

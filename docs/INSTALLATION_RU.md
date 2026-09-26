@@ -4,6 +4,26 @@
 сети — в [Networking](NETWORKING.md), проверка — в [Testing](TESTING.md). Ниже
 короткая памятка оператора для уже настроенной системы.
 
+## Установка из Git
+
+После установки базовой системы NVIDIA/ROS на Jetson и HailoRT на Raspberry Pi
+весь код, модели, зависимости и сервисы устанавливаются из этого репозитория:
+
+```bash
+# Jetson
+git clone https://github.com/vladromenko/MILO.git ~/MILO
+cd ~/MILO
+./install.sh jetson
+
+# Raspberry Pi
+git clone https://github.com/vladromenko/MILO.git ~/MILO
+cd ~/MILO
+./install.sh pi
+```
+
+Установщики не запускают MILO и не двигают руку. После однократной настройки
+устройств, SSH и `MILO-NET` запуск выполняется с телефона или командой `./milo start`.
+
 ## Запуск на презентации
 
 1. Освободите траекторию руки и проверьте провода.
