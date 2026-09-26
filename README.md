@@ -12,11 +12,30 @@ and authenticated phone control.
 
 ## Demo
 
-[![Watch the MILO final presentation](media/milo-hero.jpg)](media/milo-demo-720p.mp4)
-
 **[Watch the 4:39 final presentation](media/milo-demo-720p.mp4)**. The repository
 contains a web-optimized 720p copy; the
 **[1080p master is attached to the v0.1.0 release](https://github.com/vladromenko/MILO/releases/download/v0.1.0/MILO_demo_v7_corrected_story_1080p.mp4)**.
+
+## Project Journey
+
+MILO reached its current architecture through three working generations:
+
+1. **Raspberry Pi prototype.** [`pi_friend_hat-2`](https://github.com/vladromenko/pi_friend_hat-2)
+   proved that speech recognition, a local language model, and speech synthesis
+   could run offline on compact hardware. It established the private voice loop
+   and the first Hailo deployment.
+2. **Jetson-only companion.** [`Jetson_Friend`](https://github.com/vladromenko/Jetson_Friend)
+   added the camera, animated face, person memory, visual questions, and arm
+   tracking. Running everything on one Jetson produced the first complete MILO
+   experience and revealed contention between inference and physical I/O.
+3. **Distributed MILO.** The current system combines both lessons: Jetson handles
+   language, speech recognition, memory, and behavior, while Raspberry Pi and
+   Hailo own perception and hardware. This split keeps conversation fast, makes
+   device recovery independent, and supports phone-based operation without an
+   external network.
+
+The implementation history, measured performance changes, and architectural
+tradeoffs are documented in [Design Evolution](docs/DESIGN_EVOLUTION.md).
 
 The system is intentionally split into a **brain** and an **edge/body** computer.
 The Jetson keeps the language model, speech recognition, memory, policy, and
@@ -185,9 +204,6 @@ CMSIS, HAL, model, and upstream build components retain their respective license
 
 Developed during the Innovation Workshop (IW) at the Skolkovo Institute of
 Science and Technology (Skoltech). Core software, systems integration, and
-hardware implementation were led by
-[Vladislav Romenko](https://lms.skoltech.ru/groups/1640/users/15816), with project
-contributions from [Mohamed Khalid Humaid Al Abri](https://lms.skoltech.ru/groups/1640/users/16063),
-[Syed Ali](https://lms.skoltech.ru/groups/1640/users/14830),
-[Bogdan Permin](https://lms.skoltech.ru/groups/1640/users/15704), and
-[Anastasiia Sukhanovskaia](https://lms.skoltech.ru/groups/1640/users/15821).
+hardware implementation were led by Vladislav Romenko, with project
+contributions from Mohamed Khalid Humaid Al Abri, Syed Ali, Bogdan Permin, and
+Anastasiia Sukhanovskaia.
