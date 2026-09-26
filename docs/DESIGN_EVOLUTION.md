@@ -22,6 +22,14 @@ small computer.
 **What limited it:** sequential processing, no embodied perception or arm, and
 little separation between hardware ownership and dialogue logic.
 
+The loop also waited for a fixed four-second recording before starting Whisper,
+then ran recognition, a non-streamed LLM request, Piper synthesis, and playback
+in sequence. In the final system, voice activity detection closes a request 600
+ms after speech ends, services remain warm, and completed sentences stream to
+speech synthesis. For a one-second phrase, that change alone starts processing
+at about 1.6 seconds instead of 4.0 seconds. See
+[Performance](PERFORMANCE.md) for the measured and code-derived comparisons.
+
 ## 2. Jetson Friend
 
 [`Jetson_Friend`](https://github.com/vladromenko/Jetson_Friend) moved the project

@@ -34,6 +34,13 @@ MILO reached its current architecture through three working generations:
    device recovery independent, and supports phone-based operation without an
    external network.
 
+The first prototype always captured a fixed four-second audio block before doing
+any recognition. MILO now detects the end of speech after 600 ms of silence. For
+a one-second request, processing can therefore begin at about 1.6 seconds instead
+of 4.0 seconds: 2.4 seconds earlier, or a 60% reduction in capture-stage delay.
+Persistent services and sentence streaming then remove repeated process startup
+and let speech begin before the complete answer has been generated.
+
 The implementation history, measured performance changes, and architectural
 tradeoffs are documented in [Design Evolution](docs/DESIGN_EVOLUTION.md).
 
@@ -132,6 +139,7 @@ claims and should not be extrapolated to other power modes or model builds.
 | Metric | Initial implementation | Current implementation |
 | --- | ---: | ---: |
 | LLM time to first token, median | 0.463 s | 0.188 s |
+| LLM first complete sentence, median | 1.518 s | 0.815 s |
 | LLM complete response, median | 4.858 s | 1.814 s |
 | Warm short-phrase STT | 2.27 s CPU | 0.24 s CUDA |
 | Hailo YOLO inference | — | about 26 ms |
