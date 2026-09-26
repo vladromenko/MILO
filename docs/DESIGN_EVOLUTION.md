@@ -75,5 +75,5 @@ conversation. See [Performance](PERFORMANCE.md) for methodology and raw data.
 5. **Separate boot from motion.** Power-on creates connectivity; a human starts
    MILO explicitly after observing the workspace.
 6. **Treat old repositories as evidence.** The earlier repositories document
-   real design progression. `Jetson_Friend` is retained as a read-only milestone
-   with a link to MILO instead of being erased.
+   real design progression. `Jetson_Friend` remains a runnable, documented
+   single-Jetson release, while this repository carries the distributed system.
