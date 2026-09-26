@@ -1,0 +1,52 @@
+{
+  "label": "all-gpu-same-prompt",
+  "cases": [
+    {
+      "case": "support",
+      "ttft_s": 0.181,
+      "first_sentence_s": 0.603,
+      "complete_s": 1.639,
+      "answer": "It sounds like you're feeling really down and discouraged right now. Those kinds of feelings after putting in so much effort can be incredibly tough. Would you like to tell me a little more about what happened during the interview process?"
+    },
+    {
+      "case": "celebrate",
+      "ttft_s": 0.177,
+      "first_sentence_s": 0.38,
+      "complete_s": 1.512,
+      "answer": "That sounds like a wonderful achievement! Finishing a five-kilometer run is quite an accomplishment, and I'm so happy to hear you accomplished that. What was it like when you finally crossed that finish line?"
+    },
+    {
+      "case": "curiosity",
+      "ttft_s": 0.173,
+      "first_sentence_s": 0.437,
+      "complete_s": 2.324,
+      "answer": "That's a wonderful question about music! Sometimes music gives us goosebumps because it can really connect with our deeper emotions or create a strong physical feeling. It's like the music taps into something in our hearts that we can't always put into words. Are there any particular songs that you've noticed doing that for you?"
+    },
+    {
+      "case": "play",
+      "ttft_s": 0.179,
+      "first_sentence_s": 0.506,
+      "complete_s": 1.976,
+      "answer": "That sounds like a fun little challenge before your meeting! How about this: I want you to imagine that you've suddenly gained the ability to talk to all the plants in the room, and they are all gossiping about the meeting. What do you think they are whispering about?"
+    },
+    {
+      "case": "practical",
+      "ttft_s": 0.161,
+      "first_sentence_s": 0.632,
+      "complete_s": 1.713,
+      "answer": "That sounds frustrating when a task seems so simple but keeps slipping through your mind. Sometimes just starting is the hardest part, so maybe try just opening the email and writing the subject line first? What is the email about, if you feel like sharing?"
+    },
+    {
+      "case": "nuance",
+      "ttft_s": 0.164,
+      "first_sentence_s": 0.771,
+      "complete_s": 2.153,
+      "answer": "That sounds like a really mixed feeling, happy for your friend but also with a touch of jealousy. It's completely understandable to feel a swirl of emotions when someone we care about achieves something we hoped for too. Would you like to tell me a little more about what's making you feel those different things?"
+    }
+  ],
+  "median": {
+    "ttft_s": 0.175,
+    "first_sentence_s": 0.554,
+    "complete_s": 1.845
+  }
+}

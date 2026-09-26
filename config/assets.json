@@ -1,0 +1,134 @@
+[
+  {
+    "role": "brain",
+    "path": "vlm/gemma4/gemma-4-E2B-it-Q4_0.gguf",
+    "sha256": "fa401b55b07ee70a54c6dae3903c783a6e65064312529ea57175cb5f8dec6634",
+    "url": "https://huggingface.co/google/gemma-4-E2B-it-qat-q4_0-gguf/resolve/main/gemma-4-E2B_q4_0-it.gguf"
+  },
+  {
+    "role": "brain",
+    "path": "vlm/gemma4/mmproj-gemma-4-E2B-it-Q8_0.gguf",
+    "sha256": "021059cce659fe7f9170d5599761d7bbaf644b798dab9503aca30dc43e6beb14",
+    "url": "https://huggingface.co/google/gemma-4-E2B-it-qat-q4_0-gguf/resolve/main/gemma-4-E2B-it-mmproj.gguf"
+  },
+  {
+    "role": "edge",
+    "path": "tts/en_US-ryan-low.onnx",
+    "sha256": "8d21a085cc4c0010f1f3e91d5008c8691277ccfa744eb0d747becd33a3444baf",
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/ryan/low/en_US-ryan-low.onnx"
+  },
+  {
+    "role": "edge",
+    "path": "tts/en_US-ryan-low.onnx.json",
+    "sha256": "b27147e56b0525962609f82f58171f4618cbf17c6fb043d7d724ff28cc4aed60",
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/ryan/low/en_US-ryan-low.onnx.json"
+  },
+  {
+    "role": "edge",
+    "path": "vision/face_detection_yunet.onnx",
+    "sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+    "url": "https://media.githubusercontent.com/media/opencv/opencv_zoo/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx"
+  },
+  {
+    "role": "edge",
+    "path": "vision/face_recognition_sface.onnx",
+    "sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79",
+    "url": "https://huggingface.co/opencv/opencv_zoo/resolve/d4938dfc9d4ec5d098bfa33e98b3f3345a236586/models/face_recognition_sface/face_recognition_sface_2021dec.onnx"
+  },
+  {
+    "role": "edge",
+    "path": "vision/facial_expression_mobilefacenet.onnx",
+    "sha256": "4f61307602fc089ce20488a31d4e4614e3c9753a7d6c41578c854858b183e1a9",
+    "url": "https://media.githubusercontent.com/media/opencv/opencv_zoo/47534e27c9851bb1128ccc0102f1145e27f23f98/models/facial_expression_recognition/facial_expression_recognition_mobilefacenet_2022july.onnx"
+  },
+  {
+    "path": "tts/ar_JO-kareem-low.onnx",
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/ar/ar_JO/kareem/low/ar_JO-kareem-low.onnx",
+    "sha256": "2887e9d68b125965c747e1371fa21e1cef19555ea98d0795a0d5d71188b13890",
+    "role": "edge"
+  },
+  {
+    "path": "tts/ar_JO-kareem-low.onnx.json",
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/ar/ar_JO/kareem/low/ar_JO-kareem-low.onnx.json",
+    "sha256": "da328e52896826135508f797c1c77b45b35117e967c71befc377d654f100f328",
+    "role": "edge"
+  },
+  {
+    "path": "tts/de_DE-thorsten-low.onnx",
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/de/de_DE/thorsten/low/de_DE-thorsten-low.onnx",
+    "sha256": "9ac27fad17cec5c1a791161976a64f026f16fc058b400b1fea62565b8b2cf375",
+    "role": "edge"
+  },
+  {
+    "path": "tts/de_DE-thorsten-low.onnx.json",
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/de/de_DE/thorsten/low/de_DE-thorsten-low.onnx.json",
+    "sha256": "df38e892ed949f62d0c40978bc666de0b341c5f7921840ae7c72f4df8e8ffa05",
+    "role": "edge"
+  },
+  {
+    "path": "tts/fr_FR-siwis-low.onnx",
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/fr/fr_FR/siwis/low/fr_FR-siwis-low.onnx",
+    "sha256": "a7b7dcaf87229b32af8275cb1a719371234ea677bc0313d2289d5c50ab0ac53d",
+    "role": "edge"
+  },
+  {
+    "path": "tts/fr_FR-siwis-low.onnx.json",
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/fr/fr_FR/siwis/low/fr_FR-siwis-low.onnx.json",
+    "sha256": "9722527d748c284f6dd7639c4b4e661853d4f7d4514079571f67d6a97a652b69",
+    "role": "edge"
+  },
+  {
+    "path": "tts/ja_JP-hi_fi_captain-medium.onnx",
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/ja/ja_JP/hi_fi_captain/medium/ja_JP-hi_fi_captain-medium.onnx",
+    "sha256": "5eafa1610fc7a0ff2e7fde9cbe0972d876266e23d8db331727eb2466f19460eb",
+    "role": "edge"
+  },
+  {
+    "path": "tts/ja_JP-hi_fi_captain-medium.onnx.json",
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/ja/ja_JP/hi_fi_captain/medium/ja_JP-hi_fi_captain-medium.onnx.json",
+    "sha256": "fe9aeda38318607ba114926d1d7ee7d56295f9af3774a99a42b36f4354cabf27",
+    "role": "edge"
+  },
+  {
+    "path": "tts/ru_RU-denis-medium.onnx",
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/ru/ru_RU/denis/medium/ru_RU-denis-medium.onnx",
+    "sha256": "15fab56e11a097858ee115545d0f697fc2a316c41a291a5362349fb870411b0a",
+    "role": "edge"
+  },
+  {
+    "path": "tts/ru_RU-denis-medium.onnx.json",
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/ru/ru_RU/denis/medium/ru_RU-denis-medium.onnx.json",
+    "sha256": "831c860dac0b5073eaa81610a0a638ec23d90a6cf8e5f871b4485c2cec3767c8",
+    "role": "edge"
+  },
+  {
+    "path": "tts/ur_PK-aegis_female-medium.onnx",
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/ur/ur_PK/aegis_female/medium/ur_PK-aegis_female-medium.onnx",
+    "sha256": "3ec306035cfd0bbc22342fee5890450708a16dd231809522731678aa583c961f",
+    "role": "edge"
+  },
+  {
+    "path": "tts/ur_PK-aegis_female-medium.onnx.json",
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/ur/ur_PK/aegis_female/medium/ur_PK-aegis_female-medium.onnx.json",
+    "sha256": "a8385c217a7e276acf5234bf01dbd0adb007a57c32ffbcc57d2db7eac3979bb6",
+    "role": "edge"
+  },
+  {
+    "path": "vlm/smolvlm/SmolVLM2-500M-Video-Instruct-Q8_0.gguf",
+    "url": "https://huggingface.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF/resolve/ccd7aae53bcb1997355c2f094959e72b3642ce17/SmolVLM2-500M-Video-Instruct-Q8_0.gguf",
+    "sha256": "6f67b8036b2469fcd71728702720c6b51aebd759b78137a8120733b4d66438bc",
+    "role": "edge"
+  },
+  {
+    "path": "vlm/smolvlm/mmproj-SmolVLM2-500M-Video-Instruct-Q8_0.gguf",
+    "url": "https://huggingface.co/ggml-org/SmolVLM2-500M-Video-Instruct-GGUF/resolve/ccd7aae53bcb1997355c2f094959e72b3642ce17/mmproj-SmolVLM2-500M-Video-Instruct-Q8_0.gguf",
+    "sha256": "921dc7e259f308e5b027111fa185efcbf33db13f6e35749ddf7f5cdb60ef520b",
+    "role": "edge"
+  },
+  {
+    "path": "whisper/ggml-base.bin",
+    "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/5359861c739e955e79d9a303bcbc70fb988958b1/ggml-base.bin",
+    "sha256": "60ed5bc3dd14eea856493d334349b405782ddcaf0028d4b5df4088345fba2efe",
+    "role": "brain"
+  }
+]

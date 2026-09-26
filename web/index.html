@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MILO</title><link rel="stylesheet" href="/assets/panel.css"><script defer src="/assets/panel.js"></script><script defer src="/assets/joystick.js"></script></head>
+<body><header><h1>MILO</h1><span id="connection">Offline</span><button id="logout" hidden>Sign out</button></header>
+<main><p id="notice" role="status"></p><form id="login"><label>Access code<input id="code" type="password" autocomplete="current-password" required></label><button>Sign in</button></form>
+<div id="app" hidden><div class="safety" aria-label="MILO power controls"><button id="start-milo" disabled>Start MILO</button><button id="stop-milo" disabled>Stop MILO</button><strong id="runtime-state" role="status">Connecting</strong></div>
+<div class="safety actuator-safety"><button id="off" disabled>Actuators OFF</button><button id="estop" disabled>E-STOP</button><button id="reset-stop" disabled>Recover arm</button><strong id="arm">Unknown</strong></div>
+<nav aria-label="Views"><button data-tab="status" aria-selected="true">Status</button><button data-tab="vision">Camera</button><button data-tab="audio">Audio</button><button data-tab="memory">Memory</button><button data-tab="logs">Logs</button></nav>
+<section id="vision" hidden><div class="camera-toolbar"><h2>Camera</h2><label class="check" hidden><input id="live-video" type="checkbox" checked>Live video</label><button id="game-view" title="Fullscreen camera controls" aria-label="Fullscreen camera controls">&#x26F6;</button><button id="game-hold">Hold</button><button id="game-recover">Recover</button><button id="game-estop">E-STOP</button></div>
+<div class="video"><img id="camera-frame" alt="MILO camera with detected faces and objects" hidden><span id="video-state">Connecting</span></div>
+<div class="joystick-console"><div class="drive-settings">
+<label class="check"><input id="joystick-enabled" type="checkbox">Manual control</label>
+<label>Speed <output id="joystick-speed-value">4 deg/s</output><input id="joystick-speed" type="range" min="4" max="8" step="1" value="4"></label>
+</div><div class="stick-row"><div class="stick-column"><h3>Base / Lift</h3><output id="base-angles">J1 / J3</output>
+<div id="joystick" class="drive-pad" data-horizontal="J1" data-vertical="J3" role="group" tabindex="0" aria-label="Base and lift joystick, hold or use arrow keys" aria-disabled="true"><span class="stick-up">J3 +</span><span class="stick-down">J3 -</span><span class="stick-left">J1 -</span><span class="stick-right">J1 +</span><span id="stick-knob" class="stick-knob"></span></div></div>
+<div class="stick-column"><h3>Wrist</h3><output id="wrist-angles">J4 / J5</output>
+<div id="wrist-joystick" class="drive-pad" data-horizontal="J4" data-vertical="J5" role="group" tabindex="0" aria-label="Wrist joystick, hold or use arrow keys" aria-disabled="true"><span class="stick-up">J5 +</span><span class="stick-down">J5 -</span><span class="stick-left">J4 -</span><span class="stick-right">J4 +</span><span class="stick-knob"></span></div></div></div>
+<div class="shoulder-controls"><strong>Shoulder J2</strong><output id="shoulder-angle">?</output><button id="shoulder-minus" data-shoulder="-1" aria-label="Hold to decrease shoulder J2" title="Hold: J2 decrease" disabled>&#8595;</button><button id="shoulder-plus" data-shoulder="1" aria-label="Hold to increase shoulder J2" title="Hold: J2 increase" disabled>&#8593;</button></div>
+<p id="joystick-state" role="status">Manual control off</p><p id="game-notice" role="status"></p><p id="arm-problem" role="status"></p></div>
+<details class="precision-controls"><summary>Exact angles and startup</summary>
+<div class="arm-controls"><button id="home" title="Return J4, J3 and J2 to the MILO startup posture">Startup pose</button><button id="track">Track face</button><button id="scan">Look around</button><button id="hold" hidden>Hold</button></div>
+<h2>Manual arm</h2>
+<div id="target-controls"></div><p id="move-state" role="status"></p><p class="locked">J6: LOCKED</p>
+<details><summary>Arm feedback</summary><dl id="arm-pose"></dl><dl id="posture-status"></dl></details></details></section>
+<section id="status"><h2>System</h2><dl id="health"></dl><div id="live-status"><h2>Behavior</h2><form id="behavior">
+<label>Mode<select name="mode"><option value="active">Active</option><option value="quiet">Quiet</option><option value="sleep">Sleep</option></select></label>
+<label>Proactivity<select name="proactivity"><option value="quiet">Quiet</option><option value="normal">Normal</option><option value="social">Social</option></select></label><button>Apply</button></form>
+<h2>Conversation</h2><dl id="social"></dl><p id="reply"></p><h2>Resources</h2><dl id="resources"></dl><h2>Latency</h2><dl id="metrics"></dl></div></section>
+<section id="audio" hidden><h2>Audio</h2><form id="audio-settings">
+<label>Speaker volume <output id="speaker-volume-value">40%</output><input type="range" name="speaker_volume" min="0" max="100" value="40"></label>
+<label class="check"><input type="checkbox" name="muted">Mute</label>
+<label>TTS volume <output id="tts-volume-value">1.0</output><input type="range" name="tts_volume" min="0" max="1" step="0.05" value="1"></label>
+<label>Microphone gain <output id="mic-gain-value">100%</output><input type="range" name="mic_gain" min="0" max="100" value="100"></label>
+<label>Speech rate <output id="speech-rate-value">1.0</output><input type="range" name="speech_rate" min="0.7" max="1.4" step="0.05" value="1"></label>
+<label>Language<select name="language"><option value="en">English</option><option value="ru">Русский</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="ja">日本語</option><option value="ar">العربية</option><option value="ur">اردو</option></select></label>
+<button>Apply</button></form></section>
+<section id="memory" hidden><h2>People</h2><label>Person<select id="people"><option value="">Select person</option></select></label><button id="refresh-memory">Refresh</button><div id="facts"></div></section>
+<section id="logs" hidden><h2>Recent logs</h2><div class="filters"><label>Service<select id="log-service"><option>brain</option><option>web</option><option>rpc</option><option>dds</option><option>llm</option><option>stt</option></select></label>
+<label>Level<select id="log-level"><option value="all">All</option><option value="warning">Warnings</option><option value="error">Errors</option></select></label><button id="refresh-logs">Refresh</button></div><pre id="log-output"></pre></section></div></main></body></html>

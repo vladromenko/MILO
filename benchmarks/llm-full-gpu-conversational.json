@@ -1,0 +1,52 @@
+{
+  "label": "all-gpu-conversational-prompt",
+  "cases": [
+    {
+      "case": "support",
+      "ttft_s": 0.178,
+      "first_sentence_s": 1.207,
+      "complete_s": 1.904,
+      "answer": "It sounds like you put a lot of real effort into getting ready for this interview, and it's completely understandable that not getting the job leaves you feeling down. That kind of hard work doesn't disappear just because the outcome wasn't what you hoped for."
+    },
+    {
+      "case": "celebrate",
+      "ttft_s": 0.175,
+      "first_sentence_s": 0.79,
+      "complete_s": 1.52,
+      "answer": "That's a huge accomplishment, finishing a five-kilometer run without stopping is a real feat. It takes serious dedication to build up to that kind of endurance. How did you feel during the run itself?"
+    },
+    {
+      "case": "curiosity",
+      "ttft_s": 0.186,
+      "first_sentence_s": 0.779,
+      "complete_s": 2.346,
+      "answer": "Music can give people goosebumps because it taps into deep, visceral emotional pathways in our brains. Certain melodies or harmonies can trigger a physical release of chemicals, like dopamine or endorphins, which can create that intense, almost electric feeling. It's often a powerful combination of the rhythm, the emotion, and the memory it evokes."
+    },
+    {
+      "case": "play",
+      "ttft_s": 0.194,
+      "first_sentence_s": 0.839,
+      "complete_s": 1.348,
+      "answer": "Try this: imagine you're a librarian in a city where the books are made of pure sound. What happens when you try to check out a very loud, passionate novel?"
+    },
+    {
+      "case": "practical",
+      "ttft_s": 0.19,
+      "first_sentence_s": 0.551,
+      "complete_s": 1.724,
+      "answer": "Start by just opening the email and writing the subject line. Getting that initial hurdle down can often make the rest feel much less daunting. Think of it like picking up a pen; once you start moving, the momentum usually carries you along."
+    },
+    {
+      "case": "nuance",
+      "ttft_s": 0.189,
+      "first_sentence_s": 0.868,
+      "complete_s": 1.954,
+      "answer": "That sounds like a really mixed bag of feelings, happy for her success while also feeling a pang of jealousy. It's totally normal to feel that way when someone close achieves something you've been hoping for. What part of the jealousy feels the most present right now?"
+    }
+  ],
+  "median": {
+    "ttft_s": 0.188,
+    "first_sentence_s": 0.815,
+    "complete_s": 1.814
+  }
+}

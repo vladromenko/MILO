@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+  <transport_descriptors>
+    <transport_descriptor>
+      <transport_id>milo_tcp</transport_id><type>TCPv4</type>
+      <interfaceWhiteList><address>127.0.0.1</address></interfaceWhiteList>
+      <enable_tcp_nodelay>true</enable_tcp_nodelay>
+    </transport_descriptor>
+  </transport_descriptors>
+  <participant profile_name="milo_client" is_default_profile="true">
+    <rtps>
+      <userTransports><transport_id>milo_tcp</transport_id></userTransports>
+      <useBuiltinTransports>false</useBuiltinTransports>
+      <builtin><initialPeersList><locator><tcpv4>
+        <address>127.0.0.1</address><physical_port>15150</physical_port>
+      </tcpv4></locator></initialPeersList></builtin>
+    </rtps>
+  </participant>
+</profiles>

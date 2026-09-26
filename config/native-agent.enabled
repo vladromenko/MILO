@@ -1,0 +1,2 @@
+Run micro-ROS next to the physical serial device on Raspberry Pi.
+DDS is restricted to loopback TCP and forwarded through authenticated SSH.

@@ -1,0 +1,3 @@
+# Preserve the imported vendor source byte-for-byte, including CRLF.
+* -text -whitespace
+**/* -text -whitespace

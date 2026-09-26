@@ -1,0 +1,52 @@
+{
+  "label": "baseline-24-layers",
+  "cases": [
+    {
+      "case": "support",
+      "ttft_s": 0.494,
+      "first_sentence_s": 2.386,
+      "complete_s": 5.246,
+      "answer": "It sounds like you are feeling really down and disappointed right now after all the hard work you put into preparing for that interview. That feeling of wanting to feel useful when things don't go as planned is completely understandable. Would you like to talk a little more about how you're feeling about it?"
+    },
+    {
+      "case": "celebrate",
+      "ttft_s": 0.447,
+      "first_sentence_s": 0.903,
+      "complete_s": 3.566,
+      "answer": "That sounds like a wonderful achievement! Running five kilometers without stopping is quite something to be proud of. What was the run like for you, and how did it feel when you finally crossed that finish line?"
+    },
+    {
+      "case": "curiosity",
+      "ttft_s": 0.46,
+      "first_sentence_s": 1.07,
+      "complete_s": 6.704,
+      "answer": "That's a wonderful question about music! Sometimes music can give us goosebumps because it can really touch something deep inside our feelings, whether it's joy, nostalgia, or even a touch of sadness. It's like the music connects with a part of you that you might not have been aware of before. Have you ever noticed a particular song that always gives you a little shiver?"
+    },
+    {
+      "case": "play",
+      "ttft_s": 0.477,
+      "first_sentence_s": 1.396,
+      "complete_s": 5.308,
+      "answer": "That sounds like you have a little time to play something fun. How about this: I want you to imagine you are a tiny, fluffy cat suddenly able to talk, and you have to convince a very grumpy squirrel to let you use his favorite nut stash. What would be your opening line to start that negotiation?"
+    },
+    {
+      "case": "practical",
+      "ttft_s": 0.466,
+      "first_sentence_s": 1.639,
+      "complete_s": 4.452,
+      "answer": "That sounds frustrating when a task seems so simple but keeps getting in the way. Sometimes just starting is the hardest part, so perhaps you could try just opening the email and writing the first sentence? What is the email about, if you feel like sharing?"
+    },
+    {
+      "case": "nuance",
+      "ttft_s": 0.442,
+      "first_sentence_s": 1.959,
+      "complete_s": 4.47,
+      "answer": "Oh, it sounds like you have a really big mix of happy and jealous feelings swirling around right now. It's completely understandable to feel those different emotions when someone close to you achieves something wonderful. What is it about her promotion that makes you feel those feelings?"
+    }
+  ],
+  "median": {
+    "ttft_s": 0.463,
+    "first_sentence_s": 1.518,
+    "complete_s": 4.858
+  }
+}

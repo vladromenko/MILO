@@ -1,0 +1,15 @@
+
+
+.metadata
+*.log
+.settings
+
+
+.DS_Store
+.vscode/
+.v4_build_start
+
+Debug/*
+!Debug/*.hex
+
+*Debug.launch
