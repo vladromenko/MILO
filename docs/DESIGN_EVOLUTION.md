@@ -74,5 +74,6 @@ conversation. See [Performance](PERFORMANCE.md) for methodology and raw data.
    camera preview, or manual operation.
 5. **Separate boot from motion.** Power-on creates connectivity; a human starts
    MILO explicitly after observing the workspace.
-6. **Treat old repositories as evidence.** The two earlier repositories document
-   real design progression and should be archived with links to MILO, not erased.
+6. **Treat old repositories as evidence.** The earlier repositories document
+   real design progression. `Jetson_Friend` is retained as a read-only milestone
+   with a link to MILO instead of being erased.

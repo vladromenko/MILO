@@ -15,7 +15,8 @@ and authenticated phone control.
 [![Watch the MILO final presentation](media/milo-hero.jpg)](media/milo-demo-720p.mp4)
 
 **[Watch the 4:39 final presentation](media/milo-demo-720p.mp4)**. The repository
-contains a web-optimized 720p copy; the 1080p master is retained outside Git.
+contains a web-optimized 720p copy; the
+**[1080p master is attached to the v0.1.0 release](https://github.com/vladromenko/MILO/releases/download/v0.1.0/MILO_demo_v7_corrected_story_1080p.mp4)**.
 
 The system is intentionally split into a **brain** and an **edge/body** computer.
 The Jetson keeps the language model, speech recognition, memory, policy, and
